@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void main(String[] args) {  
+        ToBinar();  
+    }  
+    
+    private static void ToBinar() {
+        
+        int[] Mass2;
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Program 'converter' started..." + "\n\nEnter a number in the decimal system --> ");
+        int number = input.nextInt();
+        System.out.println(number);
+        int num = number;
+        int len, b, i;
+        i = 0;
+        len = 0;
+        
+        while(number != 0 ) {
+            len++;
+            number = number / 2;
+        }  
+        
+        Mass2 = new int[len];
+        
+        for(i = 0; i < len; i ++){
+            b = num % 2;
+            num = num / 2;
+            Mass2[i] = b;
+        }
+        
+        System.out.print("Your number in binar system: ");
+        
+        for(i = len - 1; i >= 0; i--){
+            System.out.print(Mass2[i]);
+        }
+        
+        System.out.print("\n\nProgram 'converter' finished...");
+    }    
+    
+}
+
